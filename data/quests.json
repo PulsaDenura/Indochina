@@ -1,0 +1,22 @@
+[
+  {
+    "country": "Laos",
+    "type": "Main",
+    "title": "Echoes of the Golden Monks",
+    "description": "Witness the sacred morning alms ritual and climb Mount Phousi.",
+    "location": "Luang Prabang",
+    "duration": "Half Day",
+    "xp": "400 XP",
+    "gear": "Light robe, temple attire"
+  },
+  {
+    "country": "Vietnam",
+    "type": "Side",
+    "title": "Climb of the Marble Spirits",
+    "description": "Climb caves and pagodas at Marble Mountains.",
+    "location": "Marble Mountains",
+    "duration": "2 hrs",
+    "xp": "200 XP",
+    "gear": "Shoes, headlamp"
+  }
+]
