@@ -40,6 +40,13 @@ export default function Home() {
     'Cambodia': '🇰🇭'
   };
 
+  const getCountryXP = (quests) => {
+    const total = quests.reduce((sum, q) => sum + parseInt(q.xp), 0);
+    const earned = quests.reduce((sum, q) => sum + (checkedQuests[q.index] ? parseInt(q.xp) : 0), 0);
+    const percent = Math.floor((earned / total) * 100);
+    return { total, earned, percent };
+  };
+
   return (
     <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
       <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌏 Indochina Travel Questbook</h1>
@@ -60,44 +67,55 @@ export default function Home() {
         loading="lazy"
       ></iframe>
 
-      {Object.entries(grouped).map(([country, quests]) => (
-        <div key={country} style={{ marginBottom: '2rem' }}>
-          <h2
-            onClick={() => toggleCountry(country)}
-            style={{
-              fontSize: '1.5rem',
-              marginBottom: '1rem',
-              cursor: 'pointer',
-              background: '#f0f0f0',
-              padding: '0.5rem 1rem',
-              borderRadius: '6px'
-            }}
-          >
-            {expandedCountries[country] ? '▼' : '▶'} {countryFlags[country] || ''} {countryTitles[country] || country}
-          </h2>
-          {expandedCountries[country] && quests.map((q) => (
-            <div key={q.index} style={{
-              border: '1px solid #ccc',
-              borderRadius: '8px',
-              padding: '1rem',
-              marginBottom: '1rem',
-              backgroundColor: '#fff',
-              display: 'flex',
-              alignItems: 'start',
-              gap: '1rem'
-            }}>
-              <input type="checkbox" checked={checkedQuests[q.index]} onChange={() => toggleCheckbox(q.index)} />
-              <div>
-                <p><strong>🗺️ Country:</strong> {countryFlags[q.country] || ''} {q.country}</p>
-                <h2>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
-                <p><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
-                <p>{q.description}</p>
-                <p><strong>🎒 Gear:</strong> {q.gear}</p>
+      {Object.entries(grouped).map(([country, quests]) => {
+        const { earned, total, percent } = getCountryXP(quests);
+        return (
+          <div key={country} style={{ marginBottom: '2rem' }}>
+            <h2
+              onClick={() => toggleCountry(country)}
+              style={{
+                fontSize: '1.5rem',
+                marginBottom: '1rem',
+                cursor: 'pointer',
+                background: '#f0f0f0',
+                padding: '0.5rem 1rem',
+                borderRadius: '6px'
+              }}
+            >
+              {expandedCountries[country] ? '▼' : '▶'} {countryFlags[country] || ''} {countryTitles[country] || country}
+            </h2>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '0.3rem' }}>🎯 {earned} / {total} XP ({percent}%)</div>
+              <div style={{ height: '14px', background: '#eee', borderRadius: '7px', overflow: 'hidden' }}>
+                <div style={{ width: `${percent}%`, height: '100%', background: '#2196f3' }}></div>
               </div>
             </div>
-          ))}
-        </div>
-      ))}
+
+            {expandedCountries[country] && quests.map((q) => (
+              <div key={q.index} style={{
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                padding: '1rem',
+                marginBottom: '1rem',
+                backgroundColor: '#fff',
+                display: 'flex',
+                alignItems: 'start',
+                gap: '1rem'
+              }}>
+                <input type="checkbox" checked={checkedQuests[q.index]} onChange={() => toggleCheckbox(q.index)} />
+                <div>
+                  <p><strong>🗺️ Country:</strong> {countryFlags[q.country] || ''} {q.country}</p>
+                  <h2>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
+                  <p><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
+                  <p>{q.description}</p>
+                  <p><strong>🎒 Gear:</strong> {q.gear}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
