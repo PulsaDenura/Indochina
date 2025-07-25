@@ -80,24 +80,22 @@ export default function Home() {
         paddingTop: '1rem',
         marginBottom: '1rem'
       }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>🌏 Indochina Travel Questbook</h1>
           <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
             {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
           </button>
         </div>
 
-        <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
-          <strong>Filter by Type:</strong>{' '}
-          <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
-            <option value="All">All</option>
-            <option value="Main">Main</option>
-            <option value="Side">Side</option>
-          </select>
-        </div>
-
-        <div style={{ marginBottom: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
-        <div style={{ marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginTop: '1rem' }}>
+          <div>
+            <strong>Filter by Type:</strong>{' '}
+            <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+              <option value="All">All</option>
+              <option value="Main">Main</option>
+              <option value="Side">Side</option>
+            </select>
+          </div>
           <div><strong>Quick Jump:</strong>{' '}
             {Object.keys(grouped).map((country) => (
               <button
@@ -111,6 +109,7 @@ export default function Home() {
           </div>
         </div>
 
+        <div style={{ marginTop: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
           <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
