@@ -6,7 +6,7 @@
     "description": "Witness the sacred morning alms ritual and climb Mount Phousi.",
     "location": "Luang Prabang",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Light robe, temple attire",
     "checked": false
   },
@@ -17,7 +17,7 @@
     "description": "Swim beneath Kuang Si’s turquoise cascades.",
     "location": "Kuang Si Falls",
     "duration": "Half Day",
-    "xp": "250 XP",
+    "xp": "250",
     "gear": "Swimwear, towel",
     "checked": false
   },
@@ -28,7 +28,7 @@
     "description": "Zip through the jungle and sleep in sky-high treehouses on the legendary Gibbon Experience.",
     "location": "Huay Xai (Bokeo)",
     "duration": "2–3 Days",
-    "xp": "1200 XP",
+    "xp": "1200",
     "gear": "Gloves, long pants, bug spray, headlamp",
     "checked": false
   },
@@ -39,7 +39,7 @@
     "description": "Hike to the panoramic Nong Khiaw viewpoint.",
     "location": "Nong Khiaw",
     "duration": "3 hrs",
-    "xp": "350 XP",
+    "xp": "350",
     "gear": "Hiking boots, headlamp",
     "checked": false
   },
@@ -50,7 +50,7 @@
     "description": "Explore historic caves once used as wartime shelters.",
     "location": "Pha Tok Cave",
     "duration": "2 hrs",
-    "xp": "100 XP",
+    "xp": "100",
     "gear": "Flashlight, grippy shoes",
     "checked": false
   },
@@ -61,7 +61,7 @@
     "description": "Trek through villages and jungle trails from Muang Ngoi.",
     "location": "Muang Ngoi to Ban Na",
     "duration": "Full Day",
-    "xp": "450 XP",
+    "xp": "450",
     "gear": "Trail shoes, bug spray",
     "checked": false
   },
@@ -72,7 +72,7 @@
     "description": "Paddle the Nam Ou and soak in remote riverscapes.",
     "location": "Nam Ou River",
     "duration": "3 hrs",
-    "xp": "200 XP",
+    "xp": "200",
     "gear": "Dry bag, paddle gloves",
     "checked": false
   },
@@ -83,7 +83,7 @@
     "description": "Soar above Vang Vieng in a sunrise hot air balloon ride.",
     "location": "Vang Vieng",
     "duration": "1.5 hrs",
-    "xp": "500 XP",
+    "xp": "500",
     "gear": "Light jacket, GoPro",
     "checked": false
   },
@@ -94,7 +94,7 @@
     "description": "Swim and spelunk in the sacred Blue Lagoon and caves.",
     "location": "Blue Lagoon",
     "duration": "2 hrs",
-    "xp": "180 XP",
+    "xp": "180",
     "gear": "Swimwear, flashlight",
     "checked": false
   },
@@ -105,7 +105,7 @@
     "description": "Explore Vientiane's history from COPE to Pha That Luang.",
     "location": "Vientiane",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Walking shoes, modest attire",
     "checked": false
   },
@@ -116,7 +116,7 @@
     "description": "Barter and snack through Vientiane’s night market.",
     "location": "Vientiane Night Market",
     "duration": "2 hrs",
-    "xp": "100 XP",
+    "xp": "100",
     "gear": "Cash, reusable bag",
     "checked": false
   },
@@ -127,7 +127,7 @@
     "description": "Ride through karst cliffs, bat caves, and river canyons.",
     "location": "Thakhek",
     "duration": "3–4 Days",
-    "xp": "1500 XP",
+    "xp": "1500",
     "gear": "Motorbike, flashlight, gloves, scarf",
     "checked": false
   },
@@ -138,7 +138,7 @@
     "description": "Roam waterfalls, coffee farms, and tribal villages.",
     "location": "Pakse",
     "duration": "2-3 Days",
-    "xp": "1000 XP",
+    "xp": "1000",
     "gear": "Rain gear, swimwear, sandals, GoPro",
     "checked": false
   },
@@ -149,7 +149,7 @@
     "description": "Cross into Cambodia from Laos at Veun Kham.",
     "location": "Veun Kham Border",
     "duration": "1–2 hrs",
-    "xp": "150 XP",
+    "xp": "150",
     "gear": "Passport, USD cash, patience",
     "checked": false
   },
@@ -160,7 +160,7 @@
     "description": "Cruise the wild Mekong near Laos' border.",
     "location": "Stung Treng",
     "duration": "Half Day",
-    "xp": "350 XP",
+    "xp": "350",
     "gear": "Hat, water bottle, camera",
     "checked": false
   },
@@ -171,7 +171,7 @@
     "description": "Spot Irrawaddy dolphins in Kratie.",
     "location": "Kratie",
     "duration": "2 hrs",
-    "xp": "200 XP",
+    "xp": "200",
     "gear": "Binoculars, patience, boat shoes",
     "checked": false
   },
@@ -182,7 +182,7 @@
     "description": "Wander Angkor Wat’s legendary temple maze.",
     "location": "Angkor Wat, Siem Reap",
     "duration": "Half Day",
-    "xp": "500 XP",
+    "xp": "500",
     "gear": "Sun hat, camera, respectful attire",
     "checked": false
   },
@@ -193,7 +193,7 @@
     "description": "Explore jungle-wrapped ruins reclaimed by nature.",
     "location": "Ta Prohm",
     "duration": "1.5 hrs",
-    "xp": "250 XP",
+    "xp": "250",
     "gear": "Mosquito spray, wide-angle lens",
     "checked": false
   },
@@ -204,7 +204,7 @@
     "description": "Cruise through the floating villages and wetlands of Southeast Asia’s largest lake.",
     "location": "Tonlé Sap Lake",
     "duration": "3 hrs",
-    "xp": "250 XP",
+    "xp": "250",
     "gear": "Hat, poncho, cash for boat",
     "checked": false
   },
@@ -215,7 +215,7 @@
     "description": "Learn Cambodia’s modern history in Phnom Penh.",
     "location": "Phnom Penh",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Audio guide, tissues, respectful clothing",
     "checked": false
   },
@@ -226,7 +226,7 @@
     "description": "Taste Kampot pepper and explore colonial Kep.",
     "location": "Kampot & Kep",
     "duration": "3 hrs",
-    "xp": "300 XP",
+    "xp": "300",
     "gear": "Scooter, open palate",
     "checked": false
   },
@@ -237,7 +237,7 @@
     "description": "Enter Vietnam via Prek Chak—one final border shuffle before the dragon’s land.",
     "location": "Prek Chak Border",
     "duration": "1–2 hrs",
-    "xp": "150 XP",
+    "xp": "150",
     "gear": "E-visa, printed docs, cash",
     "checked": false
   },
@@ -248,7 +248,7 @@
     "description": "Pause by the Gulf of Thailand for a ferry hop or breezy stroll.",
     "location": "Rach Gia",
     "duration": "1 hr",
-    "xp": "100 XP",
+    "xp": "100",
     "gear": "Sunhat, sandals, ferry ticket",
     "checked": false
   },
@@ -259,7 +259,7 @@
     "description": "Float through Ben Tre’s iconic coconut canals on a sampan ride.",
     "location": "Ben Tre",
     "duration": "2 hrs",
-    "xp": "200 XP",
+    "xp": "200",
     "gear": "River shoes, hat, camera",
     "checked": false
   },
@@ -270,7 +270,7 @@
     "description": "Snorkel, relax, and explore Phu Quoc’s beaches.",
     "location": "Phu Quoc",
     "duration": "Full Day",
-    "xp": "500 XP",
+    "xp": "500",
     "gear": "Swimsuit, snorkel",
     "checked": false
   },
@@ -281,7 +281,7 @@
     "description": "Sail through Can Tho’s floating markets.",
     "location": "Can Tho",
     "duration": "Half Day",
-    "xp": "300 XP",
+    "xp": "300",
     "gear": "Camera, cash",
     "checked": false
   },
@@ -292,7 +292,7 @@
     "description": "Discover Saigon’s energy, food, and history.",
     "location": "Ho Chi Minh City",
     "duration": "Full Day",
-    "xp": "600 XP",
+    "xp": "600",
     "gear": "Walking shoes, metro card",
     "checked": false
   },
@@ -303,7 +303,7 @@
     "description": "Spot gibbons and wild birds in Cat Tien NP.",
     "location": "Cat Tien National Park",
     "duration": "Half Day",
-    "xp": "300 XP",
+    "xp": "300",
     "gear": "Bug spray, binoculars",
     "checked": false
   },
@@ -314,7 +314,7 @@
     "description": "Explore the coastal cliffs and Cham temples of Quy Nhon.",
     "location": "Quy Nhon",
     "duration": "3 hrs",
-    "xp": "300 XP",
+    "xp": "300",
     "gear": "Scooter, walking shoes, sunblock",
     "checked": false
   },
@@ -325,7 +325,7 @@
     "description": "Climb caves and pagodas at Marble Mountains.",
     "location": "Marble Mountains",
     "duration": "2 hrs",
-    "xp": "200 XP",
+    "xp": "200",
     "gear": "Shoes, headlamp",
     "checked": false
   },
@@ -336,7 +336,7 @@
     "description": "Explore Da Nang’s Sơn Trà Peninsula, beaches, and panoramic viewpoints.",
     "location": "Da Nang",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Scooter, camera, shades",
     "checked": false
   },
@@ -347,7 +347,7 @@
     "description": "Float lanterns and eat street food in Hoi An.",
     "location": "Hoi An",
     "duration": "Evening",
-    "xp": "450 XP",
+    "xp": "450",
     "gear": "Tripod, comfy shoes",
     "checked": false
   },
@@ -358,7 +358,7 @@
     "description": "Stroll Hue’s imperial citadel and tombs.",
     "location": "Hue",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Guidebook, hat",
     "checked": false
   },
@@ -369,7 +369,7 @@
     "description": "Explore Phong Nha’s massive cave systems.",
     "location": "Đồng Hới",
     "duration": "Full Day",
-    "xp": "600 XP",
+    "xp": "600",
     "gear": "Caving gear",
     "checked": false
   },
@@ -380,7 +380,7 @@
     "description": "Dive into Hanoi’s Old Quarter and lakes.",
     "location": "Hanoi",
     "duration": "Half Day",
-    "xp": "400 XP",
+    "xp": "400",
     "gear": "Street food map",
     "checked": false
   },
@@ -391,7 +391,7 @@
     "description": "Hike through rice terraces in misty Sa Pa.",
     "location": "Sa Pa",
     "duration": "Full Day",
-    "xp": "500 XP",
+    "xp": "500",
     "gear": "Hiking shoes, rain jacket",
     "checked": false
   },
@@ -402,7 +402,7 @@
     "description": "Motorbike Vietnam’s most epic mountain loop.",
     "location": "Ha Giang Loop",
     "duration": "4 Days",
-    "xp": "2000 XP",
+    "xp": "2000",
     "gear": "Motorbike, gloves, first-aid kit, ספר תהילים והרבה אמונה",
     "checked": false
   }
