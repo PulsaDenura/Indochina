@@ -39,9 +39,9 @@ export default function Home() {
   }, {});
 
   const countryTitles = {
-    'Laos': '🦣 Kingdom of the Million Elephants',
-    'Vietnam': '🐉 Realm of the Ascending Dragon',
-    'Cambodia': '🛕 Empire of Temples'
+    'Laos': '🦣 Kingdom of Rivers and Mist',
+    'Vietnam': '🐉 Lands of the Dragon’s Breath',
+    'Cambodia': '🛕 Realm of Jungle Temples'
   };
 
   const countryFlags = {
@@ -96,21 +96,18 @@ export default function Home() {
               <option value="Side">Side</option>
             </select>
           </div>
-          <div><strong>Quick Jump:</strong>{' '}
-            {Object.keys(grouped).map((country) => (
-              <button
-                key={country}
-                onClick={() => handleAnchorClick(country)}
-                style={{ marginRight: '0.5rem', padding: '0.3rem 0.6rem' }}
-              >
-                {countryFlags[country]} {country}
-              </button>
-            ))}
-          </div>
+          <div>{Object.keys(grouped).map((country) => (
+            <button
+              key={country}
+              onClick={() => handleAnchorClick(country)}
+              style={{ marginRight: '0.5rem', padding: '0.3rem 0.6rem' }}
+            >
+              {countryFlags[country]} {country}
+            </button>
+          ))}</div>
         </div>
 
-        <div style={{ marginTop: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
-        <div style={{ marginBottom: '2rem' }}>
+        <div style={{ marginBottom: '2rem', marginTop: '1rem' }}>
           <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
           <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
             <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
