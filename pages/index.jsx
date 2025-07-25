@@ -47,9 +47,9 @@ export default function Home() {
         }}>
           <input type="checkbox" checked={checkedQuests[i]} onChange={() => toggleCheckbox(i)} />
           <div>
+            <p><strong>🗺️ Country:</strong> {q.country}</p>
             <h2>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
             <p><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
-            <p><strong>🗺️ Country:</strong> {q.country}</p>
             <p>{q.description}</p>
             <p><strong>🎒 Gear:</strong> {q.gear}</p>
           </div>
