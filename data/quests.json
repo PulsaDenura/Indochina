@@ -7,16 +7,106 @@
     "location": "Luang Prabang",
     "duration": "Half Day",
     "xp": "400 XP",
-    "gear": "Light robe, temple attire"
+    "gear": "Light robe, temple attire",
+    "checked": false
   },
   {
-    "country": "Vietnam",
+    "country": "Laos",
     "type": "Side",
-    "title": "Climb of the Marble Spirits",
-    "description": "Climb caves and pagodas at Marble Mountains.",
-    "location": "Marble Mountains",
+    "title": "Waterfall Waltz",
+    "description": "Swim beneath Kuang Si\u2019s turquoise cascades.",
+    "location": "Kuang Si Falls",
+    "duration": "Half Day",
+    "xp": "250 XP",
+    "gear": "Swimwear, towel",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Side",
+    "title": "Kingdom of the Treetops",
+    "description": "Zip through the jungle and sleep in sky-high treehouses on the legendary Gibbon Experience.",
+    "location": "Huay Xai (Bokeo)",
+    "duration": "2\u20133 Days",
+    "xp": "1200 XP",
+    "gear": "Gloves, long pants, bug spray, headlamp",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Main",
+    "title": "The Lookout\u2019s Trial",
+    "description": "Hike to the panoramic Nong Khiaw viewpoint.",
+    "location": "Nong Khiaw",
+    "duration": "3 hrs",
+    "xp": "350 XP",
+    "gear": "Hiking boots, headlamp",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Side",
+    "title": "Cave of Whispers",
+    "description": "Explore historic caves once used as wartime shelters.",
+    "location": "Pha Tok Cave",
     "duration": "2 hrs",
+    "xp": "100 XP",
+    "gear": "Flashlight, grippy shoes",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Main",
+    "title": "The Path Beyond Time",
+    "description": "Trek through villages and jungle trails from Muang Ngoi.",
+    "location": "Muang Ngoi to Ban Na",
+    "duration": "Full Day",
+    "xp": "450 XP",
+    "gear": "Trail shoes, bug spray",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Side",
+    "title": "Canoe of Echoes",
+    "description": "Paddle the Nam Ou and soak in remote riverscapes.",
+    "location": "Nam Ou River",
+    "duration": "3 hrs",
     "xp": "200 XP",
-    "gear": "Shoes, headlamp"
+    "gear": "Dry bag, paddle gloves",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Main",
+    "title": "Wings of the Karst",
+    "description": "Soar above Vang Vieng in a sunrise hot air balloon ride.",
+    "location": "Vang Vieng",
+    "duration": "1.5 hrs",
+    "xp": "500 XP",
+    "gear": "Light jacket, GoPro",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Side",
+    "title": "Dragon\u2019s Maze",
+    "description": "Swim and spelunk in the sacred Blue Lagoon and caves.",
+    "location": "Blue Lagoon",
+    "duration": "2 hrs",
+    "xp": "180 XP",
+    "gear": "Swimwear, flashlight",
+    "checked": false
+  },
+  {
+    "country": "Laos",
+    "type": "Main",
+    "title": "The Pillars of Peace",
+    "description": "Explore Vientiane's history from COPE to Pha That Luang.",
+    "location": "Vientiane",
+    "duration": "Half Day",
+    "xp": "400 XP",
+    "gear": "Walking shoes, modest attire",
+    "checked": false
   }
 ]
