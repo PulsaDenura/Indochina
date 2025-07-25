@@ -39,9 +39,9 @@ export default function Home() {
   }, {});
 
   const countryTitles = {
-    'Laos': '🦣 Kingdom of Rivers and Mist',
+    'Laos': '🌊 Kingdom of Rivers and Mist',
     'Vietnam': '🐉 Lands of the Dragon’s Breath',
-    'Cambodia': '🛕 Realm of Jungle Temples'
+    'Cambodia': '🌴 Realm of Jungle Temples'
   };
 
   const countryFlags = {
@@ -140,7 +140,7 @@ export default function Home() {
                 borderRadius: '6px'
               }}
             >
-              {expandedCountries[country] ? '▼' : '▶'} {countryFlags[country] || ''} {countryTitles[country] || country}
+              {expandedCountries[country] ? '▼' : '▶'} {countryTitles[country] || country}
             </h2>
 
             <div style={{ marginBottom: '1rem' }}>
