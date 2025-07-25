@@ -6,8 +6,16 @@ export default function Home() {
     quests.reduce((acc, q, i) => ({ ...acc, [i]: q.checked || false }), {})
   );
 
+  const [expandedCountries, setExpandedCountries] = useState(() =>
+    [...new Set(quests.map(q => q.country))].reduce((acc, country) => ({ ...acc, [country]: true }), {})
+  );
+
   const toggleCheckbox = (index) => {
     setCheckedQuests((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  const toggleCountry = (country) => {
+    setExpandedCountries((prev) => ({ ...prev, [country]: !prev[country] }));
   };
 
   const totalXP = quests.reduce((sum, q, i) => sum + (checkedQuests[i] ? parseInt(q.xp) : 0), 0);
@@ -24,6 +32,12 @@ export default function Home() {
     'Laos': '🦣 Kingdom of the Million Elephants',
     'Vietnam': '🐉 Realm of the Ascending Dragon',
     'Cambodia': '🛕 Empire of Temples'
+  };
+
+  const countryFlags = {
+    'Laos': '🇱🇦',
+    'Vietnam': '🇻🇳',
+    'Cambodia': '🇰🇭'
   };
 
   return (
@@ -48,8 +62,20 @@ export default function Home() {
 
       {Object.entries(grouped).map(([country, quests]) => (
         <div key={country} style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{countryTitles[country] || country}</h2>
-          {quests.map((q) => (
+          <h2
+            onClick={() => toggleCountry(country)}
+            style={{
+              fontSize: '1.5rem',
+              marginBottom: '1rem',
+              cursor: 'pointer',
+              background: '#f0f0f0',
+              padding: '0.5rem 1rem',
+              borderRadius: '6px'
+            }}
+          >
+            {expandedCountries[country] ? '▼' : '▶'} {countryFlags[country] || ''} {countryTitles[country] || country}
+          </h2>
+          {expandedCountries[country] && quests.map((q) => (
             <div key={q.index} style={{
               border: '1px solid #ccc',
               borderRadius: '8px',
@@ -62,7 +88,7 @@ export default function Home() {
             }}>
               <input type="checkbox" checked={checkedQuests[q.index]} onChange={() => toggleCheckbox(q.index)} />
               <div>
-                <p><strong>🗺️ Country:</strong> {q.country}</p>
+                <p><strong>🗺️ Country:</strong> {countryFlags[q.country] || ''} {q.country}</p>
                 <h2>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
                 <p><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
                 <p>{q.description}</p>
