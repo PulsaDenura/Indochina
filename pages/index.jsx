@@ -81,7 +81,7 @@ export default function Home() {
         marginBottom: '1rem'
       }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>🌏 Zada's Indochina Travel Questbook</h1>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>🌏 איש קטן בעולם הגדול</h1>
           <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
             {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
           </button>
