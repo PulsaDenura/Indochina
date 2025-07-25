@@ -10,6 +10,9 @@ export default function Home() {
     [...new Set(quests.map(q => q.country))].reduce((acc, country) => ({ ...acc, [country]: true }), {})
   );
 
+  const [filterType, setFilterType] = useState('All');
+  const [darkMode, setDarkMode] = useState(false);
+
   const toggleCheckbox = (index) => {
     setCheckedQuests((prev) => ({ ...prev, [index]: !prev[index] }));
   };
@@ -21,6 +24,13 @@ export default function Home() {
   const totalXP = quests.reduce((sum, q, i) => sum + (checkedQuests[i] ? parseInt(q.xp) : 0), 0);
   const maxXP = quests.reduce((sum, q) => sum + parseInt(q.xp), 0);
   const percent = Math.floor((totalXP / maxXP) * 100);
+
+  const getLevel = (xp) => {
+    if (xp >= 3000) return '🧙 Ascended Voyager';
+    if (xp >= 1500) return '🧭 Questing Explorer';
+    if (xp >= 501) return '🚶 Wandering Pilgrim';
+    return '🎒 Novice Nomad';
+  };
 
   const grouped = quests.reduce((acc, q, i) => {
     if (!acc[q.country]) acc[q.country] = [];
@@ -47,12 +57,32 @@ export default function Home() {
     return { total, earned, percent };
   };
 
-  return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌏 Indochina Travel Questbook</h1>
+  const themeStyles = {
+    backgroundColor: darkMode ? '#121212' : '#f9f9f9',
+    color: darkMode ? '#e0e0e0' : '#121212'
+  };
 
+  return (
+    <div style={{ padding: '2rem', fontFamily: 'sans-serif', ...themeStyles }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌏 Indochina Travel Questbook</h1>
+        <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
+          {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
+        </button>
+      </div>
+
+      <div style={{ marginBottom: '1rem' }}>
+        <strong>Filter by Type:</strong>{' '}
+        <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+          <option value="All">All</option>
+          <option value="Main">Main</option>
+          <option value="Side">Side</option>
+        </select>
+      </div>
+
+      <div style={{ marginBottom: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
       <div style={{ marginBottom: '2rem' }}>
-        <div style={{ marginBottom: '0.5rem' }}>🏆 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
+        <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
         <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
           <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
         </div>
@@ -69,6 +99,7 @@ export default function Home() {
 
       {Object.entries(grouped).map(([country, quests]) => {
         const { earned, total, percent } = getCountryXP(quests);
+        const visibleQuests = quests.filter(q => filterType === 'All' || q.type === filterType);
         return (
           <div key={country} style={{ marginBottom: '2rem' }}>
             <h2
@@ -77,7 +108,7 @@ export default function Home() {
                 fontSize: '1.5rem',
                 marginBottom: '1rem',
                 cursor: 'pointer',
-                background: '#f0f0f0',
+                background: darkMode ? '#1e1e1e' : '#f0f0f0',
                 padding: '0.5rem 1rem',
                 borderRadius: '6px'
               }}
@@ -92,13 +123,13 @@ export default function Home() {
               </div>
             </div>
 
-            {expandedCountries[country] && quests.map((q) => (
+            {expandedCountries[country] && visibleQuests.map((q) => (
               <div key={q.index} style={{
                 border: '1px solid #ccc',
                 borderRadius: '8px',
                 padding: '1rem',
                 marginBottom: '1rem',
-                backgroundColor: '#fff',
+                backgroundColor: darkMode ? '#1f1f1f' : '#fff',
                 display: 'flex',
                 alignItems: 'start',
                 gap: '1rem'
