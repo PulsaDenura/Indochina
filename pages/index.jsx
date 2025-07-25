@@ -63,35 +63,45 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif', ...themeStyles }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌏 Indochina Travel Questbook</h1>
-        <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
-          {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
-        </button>
-      </div>
+    <div style={{ padding: 'clamp(1rem, 4vw, 2rem)', fontFamily: 'sans-serif', ...themeStyles }}>
+      <div style={{
+        position: 'sticky',
+        top: 0,
+        backgroundColor: themeStyles.backgroundColor,
+        zIndex: 10,
+        paddingBottom: '1rem',
+        paddingTop: '1rem',
+        marginBottom: '1rem'
+      }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>🌏 Indochina Travel Questbook</h1>
+          <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
+            {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
+          </button>
+        </div>
 
-      <div style={{ marginBottom: '1rem' }}>
-        <strong>Filter by Type:</strong>{' '}
-        <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
-          <option value="All">All</option>
-          <option value="Main">Main</option>
-          <option value="Side">Side</option>
-        </select>
-      </div>
+        <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+          <strong>Filter by Type:</strong>{' '}
+          <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Main">Main</option>
+            <option value="Side">Side</option>
+          </select>
+        </div>
 
-      <div style={{ marginBottom: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
-      <div style={{ marginBottom: '2rem' }}>
-        <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
-        <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
-          <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
+        <div style={{ marginBottom: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
+          <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
+            <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
+          </div>
         </div>
       </div>
 
       <iframe
         src="https://www.google.com/maps/d/embed?mid=1keaf_ShloMMXen8BvXcSQ96eGOua8NE&ehbc=2E312F"
         width="100%"
-        height="480"
+        height="360"
         style={{ border: 0, borderRadius: '12px', marginBottom: '2rem' }}
         allowFullScreen=""
         loading="lazy"
@@ -105,7 +115,7 @@ export default function Home() {
             <h2
               onClick={() => toggleCountry(country)}
               style={{
-                fontSize: '1.5rem',
+                fontSize: 'clamp(1.2rem, 4vw, 1.5rem)',
                 marginBottom: '1rem',
                 cursor: 'pointer',
                 background: darkMode ? '#1e1e1e' : '#f0f0f0',
@@ -132,13 +142,19 @@ export default function Home() {
                 backgroundColor: darkMode ? '#1f1f1f' : '#fff',
                 display: 'flex',
                 alignItems: 'start',
-                gap: '1rem'
+                gap: '1rem',
+                flexWrap: 'wrap'
               }}>
-                <input type="checkbox" checked={checkedQuests[q.index]} onChange={() => toggleCheckbox(q.index)} />
+                <input
+                  type="checkbox"
+                  checked={checkedQuests[q.index]}
+                  onChange={() => toggleCheckbox(q.index)}
+                  style={{ transform: 'scale(1.3)', marginTop: '5px' }}
+                />
                 <div>
                   <p><strong>🗺️ Country:</strong> {countryFlags[q.country] || ''} {q.country}</p>
-                  <h2>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
-                  <p><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
+                  <h2 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', margin: '0.3rem 0' }}>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
+                  <p style={{ margin: '0.2rem 0' }}><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
                   <p>{q.description}</p>
                   <p><strong>🎒 Gear:</strong> {q.gear}</p>
                 </div>
