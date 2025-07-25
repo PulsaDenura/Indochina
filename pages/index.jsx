@@ -62,6 +62,13 @@ export default function Home() {
     color: darkMode ? '#e0e0e0' : '#121212'
   };
 
+  const handleAnchorClick = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div style={{ padding: 'clamp(1rem, 4vw, 2rem)', fontFamily: 'sans-serif', ...themeStyles }}>
       <div style={{
@@ -90,6 +97,20 @@ export default function Home() {
         </div>
 
         <div style={{ marginBottom: '1rem' }}>🏆 Traveler Rank: {getLevel(totalXP)}</div>
+        <div style={{ marginBottom: '1rem' }}>
+          <div><strong>Quick Jump:</strong>{' '}
+            {Object.keys(grouped).map((country) => (
+              <button
+                key={country}
+                onClick={() => handleAnchorClick(country)}
+                style={{ marginRight: '0.5rem', padding: '0.3rem 0.6rem' }}
+              >
+                {countryFlags[country]} {country}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
           <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
@@ -111,7 +132,7 @@ export default function Home() {
         const { earned, total, percent } = getCountryXP(quests);
         const visibleQuests = quests.filter(q => filterType === 'All' || q.type === filterType);
         return (
-          <div key={country} style={{ marginBottom: '2rem' }}>
+          <div key={country} id={country} style={{ marginBottom: '2rem' }}>
             <h2
               onClick={() => toggleCountry(country)}
               style={{
