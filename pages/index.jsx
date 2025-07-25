@@ -169,7 +169,7 @@ export default function Home() {
                   style={{ transform: 'scale(1.3)', marginTop: '5px' }}
                 />
                 <div>
-                  <p><{countryFlags[q.country] || ''} {q.country}</p>
+                  <p>{countryFlags[q.country] || ''} {q.country}</p>
                   <h2 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', margin: '0.3rem 0' }}>{q.type === "Main" ? "🎯" : "🛤️"} {q.title}</h2>
                   <p style={{ margin: '0.2rem 0' }}><strong>📍</strong> {q.location} | <strong>⏱</strong> {q.duration} | <strong>✨</strong> {q.xp} XP</p>
                   <p>{q.description}</p>
