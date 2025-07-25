@@ -41,7 +41,7 @@ export default function Home() {
   const countryTitles = {
     'Laos': '🌊 Kingdom of Rivers and Mist',
     'Vietnam': '🐉 Lands of the Dragon’s Breath',
-    'Cambodia': '🌴 Realm of Jungle Temples'
+    'Cambodia': '🌿 Realm of Jungle Temples'
   };
 
   const countryFlags = {
@@ -76,18 +76,18 @@ export default function Home() {
         top: 0,
         backgroundColor: themeStyles.backgroundColor,
         zIndex: 10,
-        paddingBottom: '1rem',
+        paddingBottom: '0.5rem',
         paddingTop: '1rem',
         marginBottom: '1rem'
       }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>🌏 איש קטן בעולם הגדול</h1>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)' }}>🌏 איש קטן בעולם הגדול</h1>
           <button onClick={() => setDarkMode(!darkMode)} style={{ padding: '0.5rem 1rem' }}>
             {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
           </button>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginTop: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginTop: '0.5rem' }}>
           <div>
             <strong>Filter by Type:</strong>{' '}
             <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
@@ -107,7 +107,7 @@ export default function Home() {
           ))}</div>
         </div>
 
-        <div style={{ marginBottom: '2rem', marginTop: '1rem' }}>
+        <div style={{ marginBottom: '1rem', marginTop: '0.5rem' }}>
           <div style={{ marginBottom: '0.5rem' }}>🏅 XP Progress: {totalXP} / {maxXP} XP ({percent}%)</div>
           <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
             <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
