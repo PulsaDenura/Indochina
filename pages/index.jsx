@@ -50,6 +50,24 @@ export default function Home() {
     'Cambodia': '🇰🇭'
   };
 
+  const countryAchievements = {
+    'Laos': [
+      { threshold: 25, label: '🥾 Trail Walker of the Mekong' },
+      { threshold: 60, label: '🧗 Canopy Voyager' },
+      { threshold: 100, label: '🐘 Spirit of the Elephant Realm' }
+    ],
+    'Cambodia': [
+      { threshold: 25, label: '🛶 Tonle Sap Wayfarer' },
+      { threshold: 60, label: '🧱 Ruin Runner of Angkor' },
+      { threshold: 100, label: '👑 Seeker of the Sacred Khmer' }
+    ],
+    'Vietnam': [
+      { threshold: 25, label: '🚲 Rice Field Rambler' },
+      { threshold: 60, label: '🛵 Road Sage of the Loop' },
+      { threshold: 100, label: '🐉 Dragonbound Nomad' }
+    ]
+  };
+
   const getCountryXP = (quests) => {
     const total = quests.reduce((sum, q) => sum + parseInt(q.xp), 0);
     const earned = quests.reduce((sum, q) => sum + (checkedQuests[q.index] ? parseInt(q.xp) : 0), 0);
@@ -127,6 +145,8 @@ export default function Home() {
       {Object.entries(grouped).map(([country, quests]) => {
         const { earned, total, percent } = getCountryXP(quests);
         const visibleQuests = quests.filter(q => filterType === 'All' || q.type === filterType);
+        const achievements = countryAchievements[country] || [];
+
         return (
           <div key={country} id={country} style={{ marginBottom: '2rem' }}>
             <h2
@@ -142,6 +162,20 @@ export default function Home() {
             >
               {expandedCountries[country] ? '▼' : '▶'} {countryTitles[country] || country}
             </h2>
+
+            <div style={{ marginBottom: '0.5rem', fontStyle: 'italic', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              {achievements.map((ach, idx) => (
+                <span
+                  key={idx}
+                  style={{
+                    opacity: percent >= ach.threshold ? 1 : 0.4,
+                    transition: 'opacity 0.3s ease'
+                  }}
+                >
+                  {ach.label}
+                </span>
+              ))}
+            </div>
 
             <div style={{ marginBottom: '1rem' }}>
               <div style={{ marginBottom: '0.3rem' }}>🎯 {earned} / {total} XP ({percent}%)</div>
