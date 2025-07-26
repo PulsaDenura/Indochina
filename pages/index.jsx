@@ -53,18 +53,18 @@ export default function Home() {
   const countryAchievements = {
     'Laos': [
       { threshold: 25, label: '🥾 Trail Walker of the Mekong' },
-      { threshold: 60, label: '🧗 Canopy Voyager' },
-      { threshold: 100, label: '🐘 Spirit of the Elephant Realm' }
+      { threshold: 50, label: '🧗 Canopy Voyager' },
+      { threshold: 90, label: '🐘 Spirit of the Elephant Realm' }
     ],
     'Cambodia': [
       { threshold: 25, label: '🛶 Tonle Sap Wayfarer' },
-      { threshold: 60, label: '🧱 Ruin Runner of Angkor' },
-      { threshold: 100, label: '👑 Seeker of the Sacred Khmer' }
+      { threshold: 50, label: '🧱 Ruin Runner of Angkor' },
+      { threshold: 90, label: '👑 Seeker of the Sacred Khmer' }
     ],
     'Vietnam': [
       { threshold: 25, label: '🚲 Rice Field Rambler' },
-      { threshold: 60, label: '🛵 Road Sage of the Loop' },
-      { threshold: 100, label: '🐉 Dragonbound Nomad' }
+      { threshold: 50, label: '🛵 Road Sage of Ha Giang' },
+      { threshold: 90, label: '🐉 Dragonbound Nomad' }
     ]
   };
 
