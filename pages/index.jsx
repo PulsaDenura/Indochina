@@ -178,7 +178,7 @@ export default function Home() {
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <div style={{ marginBottom: '0.3rem' }}>🎒 {earned} / {total} XP ({percent}%)</div>
+              <div style={{ marginBottom: '0.3rem' }}>✨ {earned} / {total} XP ({percent}%)</div>
               <div style={{ height: '14px', background: '#eee', borderRadius: '7px', overflow: 'hidden' }}>
                 <div style={{ width: `${percent}%`, height: '100%', background: '#2196f3' }}></div>
               </div>
