@@ -39,9 +39,9 @@ export default function Home() {
   }, {});
 
   const countryTitles = {
-    'Laos': '🌊 Kingdom of Rivers and Mist',
-    'Vietnam': '🐉 Lands of the Dragon’s Breath',
-    'Cambodia': '🌿 Realm of Jungle Temples'
+    'Laos': '🌊 Laos - Kingdom of Rivers and Mist',
+    'Vietnam': '🐉 Vietnam - Lands of the Dragon’s Breath',
+    'Cambodia': '🌿 Cambodia - Realm of Jungle Temples'
   };
 
   const countryFlags = {
