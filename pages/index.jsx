@@ -1,31 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import quests from '../data/quests.json';
 
 export default function Home() {
-  const getInitialChecked = (quests) => {
-    const saved = localStorage.getItem('checkedQuests');
-    return saved ? JSON.parse(saved) : quests.reduce((acc, q, i) => ({ ...acc, [i]: q.checked || false }), {});
-  };
+  const [checkedQuests, setCheckedQuests] = useState(() =>
+    quests.reduce((acc, q, i) => ({ ...acc, [i]: q.checked || false }), {})
+  );
 
-  const getInitialDarkMode = () => {
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
-  };
-
-  const [checkedQuests, setCheckedQuests] = useState(() => getInitialChecked(quests));
-  const [darkMode, setDarkMode] = useState(() => getInitialDarkMode());
   const [expandedCountries, setExpandedCountries] = useState(() =>
     [...new Set(quests.map(q => q.country))].reduce((acc, country) => ({ ...acc, [country]: true }), {})
   );
+
   const [filterType, setFilterType] = useState('All');
-
-  useEffect(() => {
-    localStorage.setItem('checkedQuests', JSON.stringify(checkedQuests));
-  }, [checkedQuests]);
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleCheckbox = (index) => {
     setCheckedQuests((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -40,20 +26,11 @@ export default function Home() {
   const percent = Math.floor((totalXP / maxXP) * 100);
 
   const getLevel = (xp) => {
-    if (xp >= 3000) return { title: '🧙 Ascended Voyager', badge: 'gold', next: null };
-    if (xp >= 1500) return { title: '🧭 Questing Explorer', badge: 'silver', next: 3000 };
-    if (xp >= 501) return { title: '🚶 Wandering Pilgrim', badge: 'bronze', next: 1500 };
-    return { title: '🎒 Novice Nomad', badge: 'starter', next: 501 };
+    if (xp >= 3000) return '🧙 Ascended Voyager';
+    if (xp >= 1500) return '🧭 Questing Explorer';
+    if (xp >= 501) return '🚶 Wandering Pilgrim';
+    return '🎒 Novice Nomad';
   };
-
-  const badgeColors = {
-    starter: '#aaa',
-    bronze: '#cd7f32',
-    silver: '#c0c0c0',
-    gold: '#ffd700'
-  };
-
-  const { title, badge, next } = getLevel(totalXP);
 
   const grouped = quests.reduce((acc, q, i) => {
     if (!acc[q.country]) acc[q.country] = [];
@@ -135,18 +112,6 @@ export default function Home() {
           <div style={{ height: '20px', background: '#eee', borderRadius: '10px', overflow: 'hidden' }}>
             <div style={{ width: `${percent}%`, height: '100%', background: '#4caf50' }}></div>
           </div>
-          <div style={{
-            marginTop: '0.5rem',
-            display: 'inline-block',
-            padding: '0.3rem 0.6rem',
-            borderRadius: '10px',
-            backgroundColor: badgeColors[badge],
-            color: badge === 'starter' ? '#000' : '#000',
-            fontWeight: 'bold'
-          }}>
-            {title}
-          </div>
-          {next && <div style={{ marginTop: '0.3rem' }}>🧱 {next - totalXP} XP to next level</div>}
         </div>
       </div>
 
