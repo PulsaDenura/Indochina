@@ -26,7 +26,7 @@ export default function Home() {
   const percent = Math.floor((totalXP / maxXP) * 100);
 
   const getLevel = (xp) => {
-    if (xp >= 3000) return '🧙 Ascended Voyager';
+    if (xp >= 3000) return '🧙 Ascended Voyager!';
     if (xp >= 1500) return '🧭 Questing Explorer';
     if (xp >= 501) return '🚶 Wandering Pilgrim';
     return '🎒 Novice Nomad';
